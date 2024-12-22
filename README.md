@@ -34,3 +34,4 @@ npm install
 ```bash
 npm run dev
 ```   
+## Preview [Here](https://flash-cards-ks6r9r2re-abdelaliaazzs-projects.vercel.app/)
