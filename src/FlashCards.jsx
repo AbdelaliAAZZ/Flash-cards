@@ -1,18 +1,13 @@
-import { useState } from "react";
 
 
+function FlashCards({questions , handleSelected, isSelected}) {
 
-function FlashCards({questions}) {
-
-    const [clicked, setClicked] = useState(false);
-     
-     
-
-    console.log(questions)
+    
+    
   return (
   
-    <div onClick={() => setClicked(!clicked)}  className={clicked ? "selected" : "flashcard"}>
-        {clicked ? questions.answer : questions.question}
+    <div onClick={() => handleSelected(questions.id)}  className={isSelected ? "selected" : "flashcard"}>
+        {isSelected ? questions.answer : questions.question}
     </div>
   )
 }

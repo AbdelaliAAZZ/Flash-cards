@@ -1,5 +1,6 @@
 import React from 'react'
 import FlashCards from './FlashCards'
+import { useState } from 'react';
 
 function App() {
 
@@ -37,6 +38,11 @@ function App() {
     }
   ];
 
+  const [selectedId, setSelectedId] = useState(null);
+     
+   const handleSelect = (id) => {
+    setSelectedId( id !== selectedId ? id : null) 
+   }
 
   return (
   <>
@@ -45,7 +51,12 @@ function App() {
     <div className="flashcards">
       {
         questions.map((q) => 
-          (<FlashCards key={q.id} questions={q} />)
+          (<FlashCards
+             key={q.id} 
+             questions={q} 
+             isSelected={q.id === selectedId}
+             handleSelected={handleSelect}
+             />)
         )
       }
     </div>
