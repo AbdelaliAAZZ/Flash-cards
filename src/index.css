@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  padding: 40px;
+  background-color: #ffffff;
+  color: #37352f;
+  line-height: 1.6;
+}
+
+.app-title {
+  font-family: 'Monoton', cursive, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #37352f;
+  letter-spacing: -0.02em;
+}
+.app-title:hover{
+  color: #443f3f;
+  cursor: text;
+  transform: scale(1.1);
+}
+
+.app-subtitle {
+  font-family: 'Monoton', cursive;
+
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.flashcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.flashcards div {
+  background-color: #ffffff;
+  border-radius: 8px;
+  aspect-ratio: 3/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
+              rgba(15, 15, 15, 0.1) 0px 3px 6px, 
+              rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  transition: all 0.2s ease;
+}
+
+.flashcards div:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
+              rgba(15, 15, 15, 0.1) 0px 5px 10px, 
+              rgba(15, 15, 15, 0.2) 0px 15px 40px;
+}
+
+div.selected {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  color: #37352f;
+}
+
+@media (max-width: 768px) {
+  .flashcards {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  body {
+    padding: 20px;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flashcards div {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+div.selected {
+  background-color: #3b3a37;
+  color: #fff;
+}
